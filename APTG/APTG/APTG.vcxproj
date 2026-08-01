@@ -70,6 +70,11 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -139,7 +144,18 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="APTG.c" />
+    <ClCompile Include="..\..\src\main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\billing.h" />
+    <ClInclude Include="..\..\include\delete.h" />
+    <ClInclude Include="..\..\include\eligibility.h" />
+    <ClInclude Include="..\..\include\exit_module.h" />
+    <ClInclude Include="..\..\include\file_io.h" />
+    <ClInclude Include="..\..\include\models.h" />
+    <ClInclude Include="..\..\include\ride_display.h" />
+    <ClInclude Include="..\..\include\selection.h" />
+    <ClInclude Include="..\..\include\user.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

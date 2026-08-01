@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="APTG/APTG.vcxproj" />
+  <Project Path="APTG/APTG.vcxproj" Id="37c468f3-ee9c-45fb-b77d-4297d8171117" />
 </Solution>
