@@ -427,3 +427,9 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+x64/
+build/
+build*/
+ticket.txt
+tests/generated_ticket.txt
+tests/generated_open_file.txt
