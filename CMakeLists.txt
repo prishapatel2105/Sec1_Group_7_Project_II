@@ -52,19 +52,19 @@ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/file_io.c"
     configure_project_target(pratyasa_modules)
 endif()
 
-if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c"
-   AND TARGET prisha_modules
-   AND TARGET daksh_modules
-   AND TARGET naitik_modules
-   AND TARGET pratyasa_modules)
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/src/main.c")
     add_executable(park_app src/main.c)
     configure_project_target(park_app)
-    target_link_libraries(park_app PRIVATE
-        prisha_modules
-        daksh_modules
-        naitik_modules
-        pratyasa_modules
-    )
+
+    foreach(module_target IN ITEMS
+            prisha_modules
+            daksh_modules
+            naitik_modules
+            pratyasa_modules)
+        if(TARGET ${module_target})
+            target_link_libraries(park_app PRIVATE ${module_target})
+        endif()
+    endforeach()
 endif()
 
 enable_testing()
